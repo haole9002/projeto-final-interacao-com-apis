@@ -1,0 +1,158 @@
+/*Integração de fonte Google*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+:root {
+ --fundo: #cfe8ff;  
+ --container: #ffffff;
+ --card: #ffffff;
+
+ --primaria: #2563eb;
+ --secundaria: #1e40af;
+
+ --texto: #000000;
+ --resposta: #111111;
+
+ --borda: #e5e7eb;
+ --sombra: rgba(0,0,0,0.1);
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+ min-height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: 'Merriweather', serif;
+ background-color: var(--fundo);
+}
+
+/* Container principal */
+.container {
+ display: flex;
+ flex-direction: column;
+ gap: 20px;
+
+ background-color: var(--container);
+ border-radius: 16px;
+
+ padding: 25px;
+ width: auto;
+ max-width: 95%;
+ align-items: center;
+
+ box-shadow: 0 8px 20px var(--sombra);
+}
+
+/* Botão */
+#buscarbtn {
+ width: 200px;
+ height: 50px;
+ border: none;
+ border-radius: 10px;
+
+ font-size: 15px;
+ font-weight: 700;
+
+ color: white;
+ background-color: var(--primaria);
+
+ cursor: pointer;
+ transition: all 0.2s ease;
+ box-shadow: 0 4px 10px var(--sombra);
+}
+
+#buscarbtn:hover {
+ background-color: var(--secundaria);
+ transform: translateY(-2px);
+}
+
+#buscarbtn:active {
+ transform: scale(0.96);
+}
+
+/* Card */
+.cardcachorro {
+ background-color: var(--card);
+ border-radius: 16px;
+
+ padding: 20px;
+
+ width: auto;
+ max-width: 90%;
+
+ text-align: left;
+
+ border: 1px solid var(--borda);
+ box-shadow: 0 6px 15px var(--sombra);
+
+ transition: transform 0.2s ease;
+}
+
+/* Conteúdo horizontal */
+.card-content {
+ display: flex;
+ gap: 20px;
+ align-items: center;
+ flex-wrap: wrap; /* para mobile */
+}
+
+/* Imagem redonda */
+.imagemdocao {
+ width: 120px;
+ height: 120px;
+ object-fit: cover;
+ border-radius: 50%; /* imagem circular */
+ border: 3px solid var(--primaria);
+}
+
+/* Informações */
+.informacoes {
+ display: flex;
+ flex-direction: column;
+ gap: 8px;
+}
+
+/* Títulos */
+.nome,
+.temperamento,
+.tempovida,
+.origem {
+ font-weight: 700;
+ color: var(--texto);
+ margin-top: 4px;
+}
+
+/* Respostas */
+.resposta1,
+.resposta2,
+.resposta3,
+.resposta4 {
+ color: var(--resposta);
+ font-size: 14px;
+}
+
+/* Divisões */
+.resposta1,
+.resposta2,
+.resposta3 {
+ border-bottom: 1px solid var(--borda);
+ padding-bottom: 4px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+ .card-content {
+   flex-direction: column; /* empilha no mobile */
+   align-items: center;
+ }
+
+ .imagemdocao {
+   width: 100px;
+   height: 100px;
+ }
+}
