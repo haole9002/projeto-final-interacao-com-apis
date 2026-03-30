@@ -64,23 +64,23 @@ async function gerarCao() {
     }
 
     const imagemdata = await respostaimagem.json(); //Converte resposta e pega o primeiro cachorro da lista
+      // A API retorna um array, pegamos o primeiro resultado
     const cao = imagemdata[0];
 
     // valida se tem raça
-    if (!cao.breeds || cao.breeds.length === 0) {
+    if (!cao.breeds || cao.breeds.length === 0) { //"Se cao.breeds não existe OU cao.breeds está vazio"
       throw new Error("Imagem sem raça"); //garante que a imagem realmente tem informações da raça 
     }
     
     const racaid = cao.breeds[0].id; // Esse ID será usado p/ encontrar os dados completos
 
     // tenta pegar dados completos
-   const infocompleta = racas.find(function(raca) { //procura no array racas e a raça com o mesmo ID e retorna os dados completos
+   const infocompleta = racas.find(function(raca) { //procura (find) no array racas e a raça com o mesmo ID e retorna os dados completos
     return raca.id === racaid;
 });
     // fallback se não encontrar
-    const info = infocompleta || cao.breeds[0]; //Se encontrar dados completos, usa eles; se não encontrar, usa os dados da imagem
+    const info = infocompleta || cao.breeds[0]; //Se encontrar dados completos, usa eles; se não encontrar, usa os dados disponíveis na imagem. Obs: Nesse caso, os dados vão vir, mas podem ser incompletos
 
-  
     // Atualiza tela
 
     imagem.src = cao.url; //coloca a imagem do cachorro na tela
