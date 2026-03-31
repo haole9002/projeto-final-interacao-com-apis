@@ -34,13 +34,13 @@ async function carregarRacas() { //função que busca todas as raças da API
     }
 }
 
-// Chama ao abrir a página
+// A função é acionada ao abrir a página
 carregarRacas();
 
 
 // III : FUNÇÃO ASSÍNCRONA - Gerar cão
 
-async function gerarCao() {
+async function gerarCao() { //Acionada ao clicar no botão
 
   try {
     // aparece "carregando" na tela
