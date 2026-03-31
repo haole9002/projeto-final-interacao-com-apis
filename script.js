@@ -27,7 +27,7 @@ async function carregarRacas() { //função que busca todas as raças da API
             throw new Error("Erro ao carregar raças");
         }
         
-        racas = await resposta.json(); //Converte a resposta em JSON e armazena todas as raças no array global
+        racas = await resposta.json(); //Converte json em objeto JS e armazena todas as raças no array global
     
     } catch (erro) {
         console.error("Erro ao carregar raças:", erro);
@@ -63,7 +63,7 @@ async function gerarCao() { //Acionada ao clicar no botão
       throw new Error("Erro ao buscar imagem"); // verifica se a requisição deu certo, se não, lança um erro
     }
 
-    const imagemdata = await respostaimagem.json(); //Converte resposta 
+    const imagemdata = await respostaimagem.json(); //Converte resposta em objeto JS
       // A API retorna um array, pegamos o primeiro resultado
     const cao = imagemdata[0];
 
