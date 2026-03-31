@@ -15,7 +15,7 @@ let racas = [];
 
 // II : FUNÇÕES 
 
-async function carregarRacas() {
+async function carregarRacas() { //função que busca todas as raças da API
     try {
         const resposta = await fetch("https://api.thedogapi.com/v1/breeds", {
             headers: {
