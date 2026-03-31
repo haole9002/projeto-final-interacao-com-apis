@@ -13,7 +13,7 @@ const botao = document.getElementById("buscarbtn");
 let racas = [];
 
 
-// II : FUNÇÕES - Carregar (1 vez)
+// II : FUNÇÕES 
 
 async function carregarRacas() {
     try {
