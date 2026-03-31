@@ -71,7 +71,8 @@ async function gerarCao() { //Acionada ao clicar no botão
     if (!cao.breeds || cao.breeds.length === 0) { //"Se cao.breeds não existe OU cao.breeds está vazio"
       throw new Error("Imagem sem raça"); //garante que a imagem realmente tem informações da raça 
     }
-    
+
+    //pega o ID da raça da imagem
     const racaid = cao.breeds[0].id; // Esse ID será usado p/ encontrar os dados completos
 
     // tenta pegar dados completos
