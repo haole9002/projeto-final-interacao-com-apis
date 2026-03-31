@@ -19,7 +19,7 @@ async function carregarRacas() { //função que busca todas as raças da API
     try {
         const resposta = await fetch("https://api.thedogapi.com/v1/breeds", { //Requisição GET para obter todas as raças disponíveis na API
             headers: {
-                "x-api-key": "live_MG3o4p9IwIagnDT4F12LYFmepTr8c5y43WQxlUAIdGP1a8WjO3xLnU46vuA8ccrY" //chave de acesso
+                "x-api-key": "live_VkdeW0dzrzi0XPTB4bxtvNUMsFdpZdKfafzDrueyJb70zdF9YUanwu9mFJpHOMGi" //chave de acesso
             }
         });
         
@@ -54,7 +54,7 @@ async function gerarCao() { //Acionada ao clicar no botão
         "https://api.thedogapi.com/v1/images/search?has_breeds=true", //Retorna imagem aleatória COM raça
         {
         headers: {
-          "x-api-key": "live_MG3o4p9IwIagnDT4F12LYFmepTr8c5y43WQxlUAIdGP1a8WjO3xLnU46vuA8ccrY" // chave de acesso
+          "x-api-key": "live_VkdeW0dzrzi0XPTB4bxtvNUMsFdpZdKfafzDrueyJb70zdF9YUanwu9mFJpHOMGi" // chave de acesso
         }
       }
     );
