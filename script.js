@@ -77,7 +77,7 @@ async function gerarCao() { //Acionada ao clicar no botão
 
     // tenta pegar dados completos
    const infocompleta = racas.find(function(raca) { //procura (find) no array racas e a raça com o mesmo ID e retorna os dados completos
-    return raca.id === racaid;
+    return raca.id === racaid; //A variável infocompleta vai receber o objeto da raça que tem o mesmo id que racaid
 });
     // fallback se não encontrar
     const info = infocompleta || cao.breeds[0]; //Se encontrar dados completos, usa eles; se não encontrar, usa os dados disponíveis na imagem. Obs: Nesse caso, os dados vão vir, mas podem ser incompletos
