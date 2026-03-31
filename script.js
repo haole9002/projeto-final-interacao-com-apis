@@ -9,7 +9,7 @@ const origem = document.querySelector(".resposta4");
 const botao = document.getElementById("buscarbtn");
 
 
-// Variável global (armazena todas as raças vindas da API)
+// Array global (armazena todas as raças vindas da API)
 let racas = [];
 
 
@@ -17,7 +17,7 @@ let racas = [];
 
 async function carregarRacas() { //função que busca todas as raças da API
     try {
-        const resposta = await fetch("https://api.thedogapi.com/v1/breeds", {
+        const resposta = await fetch("https://api.thedogapi.com/v1/breeds", { //Requisição GET para obter todas as raças disponíveis na API
             headers: {
                 "x-api-key": "live_MG3o4p9IwIagnDT4F12LYFmepTr8c5y43WQxlUAIdGP1a8WjO3xLnU46vuA8ccrY" //chave de acesso
             }
@@ -27,7 +27,7 @@ async function carregarRacas() { //função que busca todas as raças da API
             throw new Error("Erro ao carregar raças");
         }
         
-        racas = await resposta.json();
+        racas = await resposta.json(); //Converte a resposta em JSON e armazena todas as raças no array global
     
     } catch (erro) {
         console.error("Erro ao carregar raças:", erro);
