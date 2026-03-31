@@ -50,8 +50,8 @@ async function gerarCao() {
     }
 
     // busca imagem com raça
-    const respostaimagem = await fetch( //busca uma imagem aleatória que tenha raça associada
-        "https://api.thedogapi.com/v1/images/search?has_breeds=true",
+    const respostaimagem = await fetch( 
+        "https://api.thedogapi.com/v1/images/search?has_breeds=true", //Retorna imagem aleatória COM raça
         {
         headers: {
           "x-api-key": "live_MG3o4p9IwIagnDT4F12LYFmepTr8c5y43WQxlUAIdGP1a8WjO3xLnU46vuA8ccrY" // chave de acesso
@@ -63,7 +63,7 @@ async function gerarCao() {
       throw new Error("Erro ao buscar imagem"); // verifica se a requisição deu certo, se não, lança um erro
     }
 
-    const imagemdata = await respostaimagem.json(); //Converte resposta e pega o primeiro cachorro da lista
+    const imagemdata = await respostaimagem.json(); //Converte resposta 
       // A API retorna um array, pegamos o primeiro resultado
     const cao = imagemdata[0];
 
